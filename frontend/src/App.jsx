@@ -12,6 +12,8 @@ import Profile from "./pages/profile";
 import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
 import SideBarLeft from "./components/sidebar";
+import LandingPage from "./pages/landing";
+import FullWidthTabs from "./pages/about";
 
 const customThemeLight = createTheme({
   palette: {
@@ -70,7 +72,7 @@ const customThemeDark = createTheme({
 });
 
 function App() {
-  const [mode, setMode] = useState("light"); // Theme mode: light or dark
+  const [mode, setMode] = useState("dark"); // Theme mode: light or dark
 
   // Function to toggle between light and dark mode
   const toggleColorMode = () => {
@@ -87,12 +89,14 @@ function App() {
           <SideBarLeft>
             <NavBar toggleColorMode={toggleColorMode} mode={mode} />
             <Routes>
+              <Route path="/" element={<LandingPage />} />
               <Route path="/home" element={<Home />} />
               <Route path="/post/:id" element={<Post />} />
               <Route path="/create-post" element={<CreatePost />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/signin" element={<Signin />} />
+              <Route path="/communities" element={<FullWidthTabs />} />
             </Routes>
             <footer className="py-5 bg-dark">
               <div className="container">

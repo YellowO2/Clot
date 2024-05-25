@@ -1,14 +1,19 @@
 # Clot
 
 ## Project Description
-- Clot
-- Description of project
+
+### Clot
+Clot is a platform that allows users to:
+1. See what events their friends are attending
+2. Create their own events and easily post them to various social media sites -- such as Reddit, Facebook, Twitter, etc -- to raise awareness about their event.
 
 ### Team
-- Member 1's Name (or Pseudonyms)
-- Contact information
+- Barry (EMAIL)
+- Julian (juliandominicliaw@outlook.com)
+- Rithwik (EMAIL)
+- Yu Xuan (EMAIL)
 
-Selected Hackathon Track:
+Selected Hackathon Track: **Social Responsibility**
 
 ## List of Tech Stacks
 
@@ -23,5 +28,9 @@ Selected Hackathon Track:
 - ExpressJS
 
 ## Pitch Deck (pdf)
+<!-- Good to (i) pre-record the demo, (ii) upload to Youtube, and (iii) put the link into the Pitch Deck -->
+[Link to Pitch Deck]()
 
-## Project Demo Link (Good to pre-record the demo)
+## Project Demo Link
+
+[Link to the live working demo]()
