@@ -12,6 +12,8 @@ import {
 import ShareIcon from "@mui/icons-material/Share";
 import CustomButton from "../components/custom_button";
 import { v4 as uuid }from 'uuid';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import DoneIcon from '@mui/icons-material/Done';
 
 function formatDate(date) {
   const year = date.getFullYear();
@@ -27,6 +29,7 @@ const Post = () => {
   const [comments, setComments] = useState([]);
   const [editingId, setEditingId] = useState(null);
   const [editedContent, setEditedContent] = useState("");
+  const [registered, setRegistered] = useState(false);
 
   useEffect(() => {
     // Mock fetch post and comments data
@@ -88,6 +91,21 @@ const Post = () => {
     return <div>Loading...</div>;
   }
 
+  const RegisterButton = () => {
+    let icon = registered ? <DoneIcon></DoneIcon> : <AppRegistrationIcon></AppRegistrationIcon> ;
+    let text = registered ? <span>Registered!</span> : <span>Register for this Event</span>;
+    let buttonColour = registered ? "success" : "primary";
+    return (
+      <Button
+        variant="contained"
+        onClick={() => setRegistered(!registered)}
+        color={buttonColour}
+      >
+        {icon} {text}
+      </Button>
+    )
+  };
+
   const CommentBox = () => {
     const [inputComment, setInputComment] = useState("");
 
@@ -138,6 +156,7 @@ const Post = () => {
               }
             />
             <CustomButton displayType="post" buttonType="share" />
+            <RegisterButton></RegisterButton>
           </Box>
         </CardContent>
       </Card>

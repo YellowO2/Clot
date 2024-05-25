@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  TextField,
-  Button,
-  Select,
-  MenuItem,
-  Box,
-  InputLabel,
-  FormControl,
-} from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
@@ -30,7 +22,7 @@ const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
       onSubmit={handleSubmit}
       sx={{
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
         flexWrap: "wrap",
         gap: 2,
@@ -38,7 +30,19 @@ const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
         borderBottom: "1px solid #ccc",
       }}
     >
-      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 2,
+          backgroundColor: "#fff",
+          padding: "16px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          borderRadius: "20px",
+          width: "100%",
+          maxWidth: "800px",
+        }}
+      >
         <TextField
           type="search"
           label="Search for events"
@@ -48,6 +52,9 @@ const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
           InputProps={{
             startAdornment: <SearchIcon />,
           }}
+          sx={{
+            width: "300px",
+          }}
         />
         <TextField
           type="date"
@@ -56,6 +63,7 @@ const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
           InputLabelProps={{ shrink: true }}
           value={fromDate}
           onChange={(e) => setFromDate(e.target.value)}
+          sx={{ height: "100%" }}
         />
         <TextField
           type="date"
@@ -64,21 +72,21 @@ const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
           InputLabelProps={{ shrink: true }}
           value={toDate}
           onChange={(e) => setToDate(e.target.value)}
+          sx={{ height: "100%" }}
         />
-        <Button type="submit" variant="contained" color="primary">
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          sx={{
+            height: "56px", // Match the height of TextField input
+            padding: "0 16px", // Adjust padding if necessary
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
           Search
         </Button>
-      </Box>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-        <InputLabel>Sort By</InputLabel>
-        <Select
-          value={sortBy}
-          label="Sort By"
-          onChange={handleSortChange}
-        >
-          <MenuItem value="recent">Recent</MenuItem>
-          <MenuItem value="upvotes">Most Upvotes</MenuItem>
-        </Select>
       </Box>
     </Box>
   );

@@ -14,6 +14,7 @@ import Signin from "./pages/signin";
 
 const customThemeLight = createTheme({
   palette: {
+    mode: "light",
     primary: {
       main: "#ED9455", // Warm primary color
     },
@@ -41,20 +42,21 @@ const customThemeLight = createTheme({
 
 const customThemeDark = createTheme({
   palette: {
+    mode: "dark",
     primary: {
-      main: "#ED9455", // Warm primary color
+      main: customThemeLight.palette.secondary.main, // Warm primary color
     },
     secondary: {
-      main: "#FFEC9E", // Light secondary color
+      main: customThemeLight.palette.primary.main, // Light secondary color
     },
     background: {
-      paper: "#FFFFFF", // White background for paper elements
-      warm: "#FFFBDA", // Warm background color
+      paper: customThemeLight.palette.text.primary, // White background for paper elements
+      warm: customThemeLight.palette.text.secondary, // Warm background color
       gradient: "linear-gradient(to right, #FFFBDA, #FFEC9E, #FFBB70, #ED9455)", // Custom gradient background
     },
     text: {
-      primary: "#333333", // Dark text color
-      secondary: "#757575", // Light secondary text color
+      primary: customThemeLight.palette.background.paper, // Dark text color
+      secondary: customThemeLight.palette.background.warm, // Light secondary text color
     },
   },
   typography: {
