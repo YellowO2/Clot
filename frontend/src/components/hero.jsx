@@ -63,7 +63,7 @@ export default function Hero() {
             </Typography>
           </Typography>
           <Typography variant="h4" align="center" fontWeight="normal">
-            And suck together
+            And stop clots together
           </Typography>
           <Typography
             textAlign="center"

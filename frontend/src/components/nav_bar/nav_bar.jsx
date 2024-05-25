@@ -102,7 +102,7 @@ function NavBar({ mode, toggleColorMode }) {
                   textDecoration: "none",
                 }}
               >
-                COCK
+                Clot
               </Typography>
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <MenuItem
