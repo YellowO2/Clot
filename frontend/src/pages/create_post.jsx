@@ -122,6 +122,7 @@ const CreatePost = () => {
         <DatePicker
           label="Event Date"
           value={eventDate}
+          format="DD/MM/YYYY"
           onChange={(newValue) => setEventDate(newValue)}
           renderInput={(params) => (
             <TextField {...params} fullWidth margin="normal" />
