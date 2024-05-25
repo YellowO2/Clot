@@ -13,7 +13,6 @@ import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
 import SideBarLeft from "./components/sidebar";
 import LandingPage from "./pages/landing";
-import FullWidthTabs from "./pages/about";
 
 const customThemeLight = createTheme({
   palette: {
