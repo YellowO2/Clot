@@ -19,7 +19,7 @@ import {
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
-const tags = ["Tag 1", "Tag 2", "Tag 3", "Tag 4"];
+const tags = ["Volunteering", "Interest Group", "Local Organisation", "International"];
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");

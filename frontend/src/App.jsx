@@ -14,6 +14,7 @@ import Signin from "./pages/signin";
 import SideBarLeft from "./components/sidebar";
 import LandingPage from "./pages/landing";
 import Communities from "./pages/communities/communities";
+import VolunteerEventForm from "./pages/hostform";
 
 const customThemeLight = createTheme({
   palette: {
@@ -96,8 +97,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/communities" element={<Communities />} />
-            
-
+            <Route path="/hostform" element={<CreatePost />} />
 
           </Routes>
           <footer className="py-5 bg-dark">
