@@ -30,6 +30,10 @@ function NavBar({ mode, toggleColorMode }) {
     setOpen(newOpen);
   };
 
+  const runTo = (area) => {
+    window.location.href = area;
+  }
+
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
     const offset = 128;
@@ -124,11 +128,11 @@ function NavBar({ mode, toggleColorMode }) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection("highlights")}
-                  sx={{ py: "6px", px: "12px" }}
+                  onClick={() => runTo("communities")}
+                  sx={{ py: "6px", px: "12px"}}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Communities
+                  Communities
                   </Typography>
                 </MenuItem>
                 <MenuItem
