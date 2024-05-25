@@ -19,7 +19,14 @@ import {
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
+<<<<<<< HEAD
 const tags = ["Volunteering", "Interest Group", "Local Organisation", "International"];
+=======
+
+const tags = ["Tag 1", "Tag 2", "Tag 3", "Tag 4"];
+>>>>>>> 7451398e488e0d9823edd3e73833b6708739f8cc
+
+
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -40,10 +47,16 @@ const CreatePost = () => {
   const handleContentChange = (content) => {
     setContent(content);
   };
+  const [posts, setPosts] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    //localStorage.setItem("postnum", 0)
+    if (localStorage.postnum) {
+      localStorage.postnum = Number(localStorage.postnum)+1;
+    } else {
+      localStorage.postnum = 1;
+    }
     const newPost = {
       id: Date.now(),
       title,
@@ -56,12 +69,13 @@ const CreatePost = () => {
       numPeople,
       createdAt: new Date().toLocaleDateString(),
     };
-
-    console.log("New Post:", newPost);
+    posts.push(newPost)
+    console.log(localStorage.getItem("postnum"))
+    
     navigate(`/post/${newPost.id}`);
-    alert(
-      `${newPost.title}\n${newPost.content}\n${newPost.selectedTags}\nLocation: ${newPost.location}\nDate: ${newPost.date}\nTime: ${newPost.time}\nNumber of People: ${newPost.numPeople}\nWe will send this to backend for actual`
-    );
+    // alert(
+    //   `${newPost.title}\n${newPost.content}\n${newPost.selectedTags}\nLocation: ${newPost.location}\nDate: ${newPost.date}\nTime: ${newPost.time}\nNumber of People: ${newPost.numPeople}\nWe will send this to backend for actual`
+    // );
   };
 
   const toggleTag = (tag) => {
@@ -220,4 +234,7 @@ const CreatePost = () => {
   );
 };
 
+
+
 export default CreatePost;
+

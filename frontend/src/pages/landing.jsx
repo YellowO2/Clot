@@ -7,17 +7,16 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
-
 export default function LandingPage() {
   return (
     <Box
       id="landing"
       sx={(theme) => ({
         width: "100%",
-        backgroundImage:
-          theme.palette.mode === "light"
-            ? "linear-gradient(180deg, #CEE5FD, #FFF)"
-            : `linear-gradient(#02294F, ${alpha("#090E10", 0.0)})`,
+        // backgroundImage:
+        //   theme.palette.mode === "light"
+        //     ? "linear-gradient(180deg, #CEE5FD, #FFF)"
+        //     : `linear-gradient(#02294F, ${alpha("#090E10", 0.0)})`,
         backgroundSize: "100% 20%",
         backgroundRepeat: "no-repeat",
 
@@ -75,8 +74,6 @@ export default function LandingPage() {
               color="primary"
               sx={{ width: "200px", height: "60px", fontSize: "1.25rem" }} // Bigger size\
               href="/home"
-
-              
             >
               Find
             </Button>
@@ -84,14 +81,16 @@ export default function LandingPage() {
               variant="contained"
               color="secondary"
               sx={{ width: "200px", height: "60px", fontSize: "1.25rem" }} // Bigger size
+<<<<<<< HEAD
               href="/hostform"
+=======
+              href="/create-post"
+>>>>>>> 7451398e488e0d9823edd3e73833b6708739f8cc
             >
               Host
             </Button>
           </Stack>
 
-          
-          
           {/* <Typography
             textAlign="center"
             color="text.secondary"
@@ -127,4 +126,3 @@ export default function LandingPage() {
     
   );
 }
-

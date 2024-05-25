@@ -51,6 +51,7 @@ const mockUsers = [
 const mockEvents = [
   {
     id: 1,
+    tag: 1,
     title: "Cleanup",
     description: "Join us for a cleanup event!",
     image: "https://via.placeholder.com/150",
@@ -59,6 +60,7 @@ const mockEvents = [
   },
   {
     id: 2,
+    tag: 2,
     title: "Clot Restoration",
     description: "Help!!!",
     image: "https://via.placeholder.com/150",
@@ -67,6 +69,7 @@ const mockEvents = [
   },
   {
     id: 69,
+    tag: 3,
     title: "Red Clot Restoration",
     description: "Help us restoring the local clot!",
     image: "https://via.placeholder.com/150",
@@ -75,6 +78,7 @@ const mockEvents = [
   },
   {
     id: "White_Clot_id",
+    tag: 4,
     title: "White Clot Restoration",
     description: "Help us restoring the local !",
     image: "https://via.placeholder.com/150",
@@ -83,6 +87,7 @@ const mockEvents = [
   },
   {
     id: "rithwik",
+    tag: 3,
     title: "Haemoglobin Restoration",
     description: "Help us restoring !",
     image: "https://via.placeholder.com/150",

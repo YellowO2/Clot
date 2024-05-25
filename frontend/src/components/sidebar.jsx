@@ -17,9 +17,8 @@ import MailIcon from "@mui/icons-material/Mail";
 const drawerWidth = 240;
 const isHomePage = location.pathname === "/home";
 export default function SideBarLeft({ children }) {
-  return isHomePage ? (
+  return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
       <Drawer
         sx={{
           width: drawerWidth,
@@ -28,6 +27,7 @@ export default function SideBarLeft({ children }) {
             width: drawerWidth,
             boxSizing: "border-box",
           },
+          display: isHomePage ? "block" : "none",
         }}
         variant="permanent"
         anchor="left"
@@ -68,7 +68,5 @@ export default function SideBarLeft({ children }) {
         <Toolbar />
       </Box>
     </Box>
-  ) : (
-    <></>
   );
 }

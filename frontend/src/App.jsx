@@ -14,16 +14,20 @@ import Signin from "./pages/signin";
 import SideBarLeft from "./components/sidebar";
 import LandingPage from "./pages/landing";
 import Communities from "./pages/communities/communities";
+<<<<<<< HEAD
 import VolunteerEventForm from "./pages/hostform";
+=======
+import { mockUsers, mockEvents } from "./mock_data";
+>>>>>>> 7451398e488e0d9823edd3e73833b6708739f8cc
 
 const customThemeLight = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#ED9455", // Warm primary color
+      main: "#FFEC9E", // Warm primary color
     },
     secondary: {
-      main: "#FFEC9E", // Light secondary color
+      main: "#ED9455", // Light secondary color
     },
     background: {
       paper: "#FFFFFF", // White background for paper elements
@@ -79,14 +83,57 @@ function App() {
   const toggleColorMode = () => {
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
   };
+  const [searchParams, setSearchParams] = useState({
+    searchTerm: "",
+    fromDate: "",
+    toDate: "",
+  });
+
+  const [sortBy, setSortBy] = useState("recent");
+
+  const handleSearch = (params) => {
+    setSearchParams(params);
+  };
+
+  const handleSortChange = (sortOption) => {
+    setSortBy(sortOption);
+  };
+
+  const filteredAndSortedPosts = mockEvents
+    .filter((post) => {
+      const matchesSearchTerm =
+        post.title
+          .toLowerCase()
+          .includes(searchParams.searchTerm.toLowerCase()) ||
+        post.description
+          .toLowerCase()
+          .includes(searchParams.searchTerm.toLowerCase());
+
+      const matchesFromDate =
+        !searchParams.fromDate ||
+        new Date(post.createdOn) >= new Date(searchParams.fromDate);
+      const matchesToDate =
+        !searchParams.toDate ||
+        new Date(post.createdOn) <= new Date(searchParams.toDate);
+
+      return matchesSearchTerm && matchesFromDate && matchesToDate;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case "upvotes":
+          return b.upvotes - a.upvotes;
+        case "recent":
+        default:
+          return new Date(b.createdOn) - new Date(a.createdOn);
+      }
+    });
 
   return (
-    <ThemeProvider
-      theme={mode === "light" ? customThemeLight : customThemeDark}
-    >
+    <ThemeProvider theme={mode === "dark" ? customThemeLight : customThemeDark}>
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <BrowserRouter>
+<<<<<<< HEAD
           <NavBar toggleColorMode={toggleColorMode} mode={mode} />
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -107,6 +154,39 @@ function App() {
               </p>
             </div>
           </footer>
+=======
+          <SideBarLeft>
+            <NavBar
+              toggleColorMode={toggleColorMode}
+              mode={mode}
+              onSearch={handleSearch}
+              onSortChange={handleSortChange}
+              sortBy={sortBy}
+            />
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route
+                path="/home"
+                element={
+                  <Home filteredAndSortedPosts={filteredAndSortedPosts} />
+                }
+              />
+              <Route path="/post/:id" element={<Post />} />
+              <Route path="/create-post" element={<CreatePost />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/signin" element={<Signin />} />
+              <Route path="/communities" element={<Communities />} />
+            </Routes>
+            <footer className="py-5 bg-dark">
+              <div className="container">
+                <p className="m-0 text-center text-white">
+                  Copyright &copy; Your Website 2023
+                </p>
+              </div>
+            </footer>
+          </SideBarLeft>
+>>>>>>> 7451398e488e0d9823edd3e73833b6708739f8cc
         </BrowserRouter>
       </LocalizationProvider>
     </ThemeProvider>
