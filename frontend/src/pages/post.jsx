@@ -12,6 +12,7 @@ import {
 import ShareIcon from "@mui/icons-material/Share";
 import CustomButton from "../components/custom_button";
 import { v4 as uuid }from 'uuid';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
 function formatDate(date) {
   const year = date.getFullYear();
@@ -138,6 +139,12 @@ const Post = () => {
               }
             />
             <CustomButton displayType="post" buttonType="share" />
+            <Button
+              variant="contained"
+            >
+              <AppRegistrationIcon></AppRegistrationIcon>
+              <span>&nbsp;Register for this Event</span>
+            </Button>
           </Box>
         </CardContent>
       </Card>

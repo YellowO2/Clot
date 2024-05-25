@@ -6,7 +6,6 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import SimpleDialogDemo from "./custom_dialog";
 
 export default function Hero() {
   return (
