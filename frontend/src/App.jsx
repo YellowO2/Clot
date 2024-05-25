@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import Home from "./pages/home";
+import Post from "./pages/post";
+import CreatePost from "./pages/create_post";
+import NavBar from "./components/nav_bar/nav_bar";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Profile from "./pages/profile";
 
 const customTheme = createTheme({
   palette: {
@@ -45,11 +49,12 @@ function App() {
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <BrowserRouter>
+          <NavBar toggleColorMode={toggleColorMode} mode={mode} />
           <Routes>
-            {/* <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/post/:id" element={<Post />} />
             <Route path="/create-post" element={<CreatePost />} />
-            <Route path="/profile" element={<Profile />} /> */}
+            <Route path="/profile" element={<Profile />} />
           </Routes>
           <footer className="py-5 bg-dark">
             <div className="container">
