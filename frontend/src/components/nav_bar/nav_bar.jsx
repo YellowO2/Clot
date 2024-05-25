@@ -166,7 +166,7 @@ function NavBar({ mode, toggleColorMode }) {
                 size="small"
                 component={Link} to="/signin"
                 href="/material-ui/getting-started/templates/sign-in/"
-                target="_blank"
+                target=" "
               >
                 Sign in
               </Button>
@@ -176,7 +176,7 @@ function NavBar({ mode, toggleColorMode }) {
                 size="small"
                 component={Link} to="/signup"
                 href="/material-ui/getting-started/templates/sign-up/"
-                target="_blank"
+                target=" "
               >
                 Sign up
               </Button>
