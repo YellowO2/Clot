@@ -7,10 +7,11 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
-export default function Hero() {
+
+export default function LandingPage() {
   return (
     <Box
-      id="hero"
+      id="landing"
       sx={(theme) => ({
         width: "100%",
         backgroundImage:
@@ -63,6 +64,32 @@ export default function Hero() {
           <Typography variant="h5" align="center" fontWeight="normal">
             Stop clots together
           </Typography>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            alignSelf="center"
+            spacing={4}
+            sx={{ pt: 10, width: { xs: "100%", sm: "auto" } }}
+          >
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{ width: "200px", height: "60px", fontSize: "1.25rem" }} // Bigger size\
+
+              
+            >
+              Find
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              sx={{ width: "200px", height: "60px", fontSize: "1.25rem" }} // Bigger size
+            >
+              Host
+            </Button>
+          </Stack>
+
+          
+          
           {/* <Typography
             textAlign="center"
             color="text.secondary"
@@ -97,3 +124,4 @@ export default function Hero() {
     </Box>
   );
 }
+
