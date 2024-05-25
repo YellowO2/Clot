@@ -11,8 +11,9 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Profile from "./pages/profile";
 import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
+import SideBarLeft from "./components/sidebar";
 import LandingPage from "./pages/landing";
-import FullWidthTabs from "./pages/about";
+import Communities from "./pages/communities/communities";
 
 const customThemeLight = createTheme({
   palette: {
@@ -70,9 +71,8 @@ const customThemeDark = createTheme({
   spacing: 8, // Default spacing unit
 });
 
-
 function App() {
-  const [mode, setMode] = useState("dark"); // Theme mode: light or dark
+  const [mode, setMode] = useState("light"); // Theme mode: light or dark
 
   // Function to toggle between light and dark mode
   const toggleColorMode = () => {
@@ -80,7 +80,9 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={mode === "dark" ? customThemeLight : customThemeDark}>
+    <ThemeProvider
+      theme={mode === "dark" ? customThemeLight : customThemeDark}
+    >
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <BrowserRouter>
@@ -93,7 +95,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<Signin />} />
-            <Route path="/communities" element={<FullWidthTabs />} />
+            <Route path="/communities" element={<Communities />} />
             
 
 

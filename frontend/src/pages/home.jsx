@@ -3,50 +3,7 @@ import DisplayCard from "../components/display_card";
 import SearchBar from "../components/search_bar";
 import { Container, Grid, Divider } from "@mui/material";
 import Hero from "../components/hero";
-
-// Mock data
-const mockPostDataList = [
-  {
-    id: 1,
-    title: "Cleanup",
-    description: "Join us for a cleanup event!",
-    image: "https://via.placeholder.com/150",
-    upvotes: 100,
-    createdOn: "2024-05-01",
-  },
-  {
-    id: 2,
-    title: "Clot Restoration",
-    description: "Help!!!",
-    image: "https://via.placeholder.com/150",
-    upvotes: 10,
-    createdOn: "2024-05-02",
-  },
-  {
-    id: 69,
-    title: "Red Clot Restoration",
-    description: "Help us restoring the local clot!",
-    image: "https://via.placeholder.com/150",
-    upvotes: 69,
-    createdOn: "2024-05-03",
-  },
-  {
-    id: "White_Clot_id",
-    title: "White Clot Restoration",
-    description: "Help us restoring the local !",
-    image: "https://via.placeholder.com/150",
-    upvotes: 11,
-    createdOn: "2024-05-04",
-  },
-  {
-    id: "rithwik",
-    title: "Haemoglobin Restoration",
-    description: "Help us restoring !",
-    image: "https://via.placeholder.com/150",
-    upvotes: 0,
-    createdOn: "2024-05-05",
-  },
-];
+import { mockUsers, mockEvents } from "../mock_data";
 
 const Home = () => {
   const [searchParams, setSearchParams] = useState({
@@ -65,7 +22,7 @@ const Home = () => {
     setSortBy(sortOption);
   };
 
-  const filteredAndSortedPosts = mockPostDataList
+  const filteredAndSortedPosts = mockEvents
     .filter((post) => {
       const matchesSearchTerm =
         post.title
@@ -96,8 +53,6 @@ const Home = () => {
 
   return (
     <>
-      <Hero />
-
       <SearchBar
         onSearch={handleSearch}
         onSortChange={handleSortChange}
