@@ -16,8 +16,6 @@ import LandingPage from "./pages/landing";
 import Communities from "./pages/communities/communities";
 import { mockEvents } from "./mock_data";
 
-import VolunteerEventForm from "./pages/hostform";
-
 const customThemeLight = createTheme({
   palette: {
     mode: "light",
