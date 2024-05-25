@@ -9,6 +9,7 @@ import {
   CardActions,
   Divider,
   CardHeader,
+  Chip,
 } from "@mui/material";
 import CustomButton from "./custom_button";
 
@@ -69,6 +70,10 @@ const DisplayCard = ({ postData }) => {
           buttonType="share"
           handleClick={handleShare}
         />
+        <Chip 
+          label={`${Math.floor(Math.random() * 100)} Slots Left!`}
+          variant="outlined">
+        </Chip>
       </CardActions>
     </Card>
   );
