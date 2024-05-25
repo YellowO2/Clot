@@ -16,6 +16,8 @@ import LandingPage from "./pages/landing";
 import Communities from "./pages/communities/communities";
 import { mockEvents } from "./mock_data";
 
+import VolunteerEventForm from "./pages/hostform";
+
 const customThemeLight = createTheme({
   palette: {
     mode: "light",
@@ -151,6 +153,7 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/signin" element={<Signin />} />
               <Route path="/communities" element={<Communities />} />
+              <Route path="/hostform" element={<CreatePost />} />
             </Routes>
             <footer className="py-5 bg-dark">
               <div className="container">

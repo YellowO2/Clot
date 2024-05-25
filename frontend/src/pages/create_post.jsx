@@ -19,8 +19,12 @@ import {
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
+<<<<<<< HEAD
+const tags = ["Volunteering", "Interest Group", "Local Organisation", "International"];
+=======
 
 const tags = ["Tag 1", "Tag 2", "Tag 3", "Tag 4"];
+>>>>>>> 7451398e488e0d9823edd3e73833b6708739f8cc
 
 
 

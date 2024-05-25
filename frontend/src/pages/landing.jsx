@@ -81,7 +81,11 @@ export default function LandingPage() {
               variant="contained"
               color="secondary"
               sx={{ width: "200px", height: "60px", fontSize: "1.25rem" }} // Bigger size
+<<<<<<< HEAD
+              href="/hostform"
+=======
               href="/create-post"
+>>>>>>> 7451398e488e0d9823edd3e73833b6708739f8cc
             >
               Host
             </Button>
@@ -119,5 +123,6 @@ export default function LandingPage() {
         </Stack>
       </Container>
     </Box>
+    
   );
 }
