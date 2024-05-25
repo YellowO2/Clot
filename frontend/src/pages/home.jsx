@@ -12,6 +12,7 @@ const Home = ({ filteredAndSortedPosts }) => {
           {filteredAndSortedPosts.map((postData) => (
             <Grid key={postData.id} item xs={6} md={4}>
               <DisplayCard postData={postData} />
+              
             </Grid>
           ))}
         </Grid>
