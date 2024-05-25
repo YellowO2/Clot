@@ -24,15 +24,15 @@ const mockPostDataList = [
   },
   {
     id: 69,
-    title: "Clot Restoration",
+    title: "Red Clot Restoration",
     description: "Help us restoring the local clot!",
     image: "https://via.placeholder.com/150",
     upvotes: 69,
     createdOn: '2024-05-03',
   },
   {
-    id: "gaygay",
-    title: " Restoration",
+    id: "White_Clot_id",
+    title: "White Clot Restoration",
     description: "Help us restoring the local !",
     image: "https://via.placeholder.com/150",
     upvotes: 11,
@@ -40,7 +40,7 @@ const mockPostDataList = [
   },
   {
     id: "rithwik",
-    title: " Restoration",
+    title: "Haemoglobin Restoration",
     description: "Help us restoring !",
     image: "https://via.placeholder.com/150",
     upvotes: 0,
