@@ -11,6 +11,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Profile from "./pages/profile";
 import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
+import SideBarLeft from "./components/sidebar";
 
 const customThemeLight = createTheme({
   palette: {
@@ -68,7 +69,6 @@ const customThemeDark = createTheme({
   spacing: 8, // Default spacing unit
 });
 
-
 function App() {
   const [mode, setMode] = useState("light"); // Theme mode: light or dark
 
@@ -78,27 +78,30 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={mode === "light" ? customThemeLight : customThemeDark}>
+    <ThemeProvider
+      theme={mode === "light" ? customThemeLight : customThemeDark}
+    >
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <BrowserRouter>
-          <NavBar toggleColorMode={toggleColorMode} mode={mode} />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/post/:id" element={<Post />} />
-            <Route path="/create-post" element={<CreatePost />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/signin" element={<Signin />} />
-
-          </Routes>
-          <footer className="py-5 bg-dark">
-            <div className="container">
-              <p className="m-0 text-center text-white">
-                Copyright &copy; Your Website 2023
-              </p>
-            </div>
-          </footer>
+          <SideBarLeft>
+            <NavBar toggleColorMode={toggleColorMode} mode={mode} />
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/post/:id" element={<Post />} />
+              <Route path="/create-post" element={<CreatePost />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/signin" element={<Signin />} />
+            </Routes>
+            <footer className="py-5 bg-dark">
+              <div className="container">
+                <p className="m-0 text-center text-white">
+                  Copyright &copy; Your Website 2023
+                </p>
+              </div>
+            </footer>
+          </SideBarLeft>
         </BrowserRouter>
       </LocalizationProvider>
     </ThemeProvider>
