@@ -20,15 +20,15 @@ const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexWrap: "wrap",
-        gap: 2,
-        p: 4,
-        borderBottom: "1px solid #ccc",
-      }}
+      // sx={{
+      //   display: "flex",
+      //   justifyContent: "center",
+      //   alignItems: "center",
+      //   flexWrap: "wrap",
+      //   gap: 2,
+      //   p: 4,
+      //   borderBottom: "1px solid #ccc",
+      // }}
     >
       <Box
         sx={{
@@ -36,8 +36,8 @@ const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
           alignItems: "center",
           gap: 2,
           backgroundColor: "#fff",
-          padding: "16px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          // padding: "16px",
+          // boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
           borderRadius: "20px",
           width: "100%",
           maxWidth: "800px",
