@@ -10,8 +10,10 @@ import {
   Divider,
   CardHeader,
   Chip,
+  Button,
 } from "@mui/material";
 import CustomButton from "./custom_button";
+
 
 const DisplayCard = ({ postData }) => {
   const navigate = useNavigate();
@@ -46,10 +48,21 @@ const DisplayCard = ({ postData }) => {
         alt="Paella dish"
       />
       <CardContent>
-        {/* <Typography variant="h5" component="div" fontWeight="bold">
-            {postData.author}
-          </Typography> */}
-
+      <Button
+        loading={false}
+        // onClick={function(){}}
+        size="sm"
+        variant="soft"
+      >
+           <Typography variant="caption text" component="div" fontWeight="bold">
+            Tag {postData.tag}
+          </Typography>
+      </Button>
+      {/* <Fab variant="extended">
+        <Typography variant="caption text" component="div" fontWeight="bold">
+            Tag {postData.tag}
+          </Typography>
+      </Fab> */}
         <Typography variant="body1" color="text.secondary">
           {postData.description}
         </Typography>

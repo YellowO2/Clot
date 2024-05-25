@@ -37,6 +37,7 @@ const Post = () => {
     const fetchPost = async () => {
       const postData = {
         id: id,
+        tag: `Post tag ${id}`,
         title: `Post Title ${id}`,
         content: `This is the content of post ${id}. We will fetch the content from back end using the id in url for actual work.
          \nufosfnsofnsfiodnsfiosfnsdiofndsfodsfnisofnsidfndsofnsfnosnfosnfosdnfodns`,
