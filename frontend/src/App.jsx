@@ -12,7 +12,7 @@ import Profile from "./pages/profile";
 import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
 
-const customTheme = createTheme({
+const customThemeLight = createTheme({
   palette: {
     primary: {
       main: "#ED9455", // Warm primary color
@@ -38,6 +38,35 @@ const customTheme = createTheme({
   },
   spacing: 8, // Default spacing unit
 });
+
+const customThemeDark = createTheme({
+  palette: {
+    primary: {
+      main: "#ED9455", // Warm primary color
+    },
+    secondary: {
+      main: "#FFEC9E", // Light secondary color
+    },
+    background: {
+      paper: "#FFFFFF", // White background for paper elements
+      warm: "#FFFBDA", // Warm background color
+      gradient: "linear-gradient(to right, #FFFBDA, #FFEC9E, #FFBB70, #ED9455)", // Custom gradient background
+    },
+    text: {
+      primary: "#333333", // Dark text color
+      secondary: "#757575", // Light secondary text color
+    },
+  },
+  typography: {
+    fontFamily: "Roboto, sans-serif", // Default font family
+  },
+  shape: {
+    borderRadius: 8, // Rounded corners for elements
+  },
+  spacing: 8, // Default spacing unit
+});
+
+
 function App() {
   const [mode, setMode] = useState("light"); // Theme mode: light or dark
 
@@ -47,7 +76,7 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={customTheme}>
+    <ThemeProvider theme={mode === "light" ? customThemeLight : customThemeDark}>
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <BrowserRouter>

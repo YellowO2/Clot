@@ -15,6 +15,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ToggleColorMode from "./toggle_color_mode";
 import { linkClasses } from "@mui/material";
 import ProfileMenu from "./profilemenu";
+import SpringModal from "./springmodal";
 
 const logoStyle = {
   width: "140px",
@@ -131,14 +132,11 @@ function NavBar({ mode, toggleColorMode }) {
                     Communities
                   </Typography>
                 </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection("pricing")}
-                  sx={{ py: "6px", px: "12px" }}
-                >
+                <SpringModal>
                   <Typography variant="body2" color="text.primary">
                     About
                   </Typography>
-                </MenuItem>
+                </SpringModal>
                 <MenuItem
                   onClick={() => scrollToSection("faq")}
                   sx={{ py: "6px", px: "12px" }}
