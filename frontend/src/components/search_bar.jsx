@@ -30,7 +30,7 @@ const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
       onSubmit={handleSubmit}
       sx={{
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
         flexWrap: "wrap",
         gap: 2,
@@ -69,17 +69,13 @@ const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
           Search
         </Button>
       </Box>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+      {/* <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
         <InputLabel>Sort By</InputLabel>
-        <Select
-          value={sortBy}
-          label="Sort By"
-          onChange={handleSortChange}
-        >
+        <Select value={sortBy} label="Sort By" onChange={handleSortChange}>
           <MenuItem value="recent">Recent</MenuItem>
           <MenuItem value="upvotes">Most Upvotes</MenuItem>
         </Select>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

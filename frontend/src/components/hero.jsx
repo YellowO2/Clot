@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
+import SimpleDialogDemo from "./custom_dialog";
 
 export default function Hero() {
   return (
@@ -33,7 +33,6 @@ export default function Hero() {
           flexDirection: "column",
           alignItems: "center",
           pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
         }}
       >
         <Stack spacing={2} useFlexGap sx={{ width: { xs: "100%", sm: "70%" } }}>
@@ -44,7 +43,7 @@ export default function Hero() {
               flexDirection: { xs: "column", md: "row" },
               alignSelf: "center",
               textAlign: "center",
-              fontSize: "clamp(3.5rem, 10vw, 4rem)",
+              fontSize: "clamp(3.5rem, 10vw, 2rem)",
             }}
           >
             Find your&nbsp;
@@ -52,7 +51,7 @@ export default function Hero() {
               component="span"
               variant="h1"
               sx={{
-                fontSize: "clamp(3rem, 10vw, 4rem)",
+                fontSize: "clamp(3.5rem, 10vw, 2rem)",
                 color: (theme) =>
                   theme.palette.mode === "light"
                     ? "primary.main"
@@ -62,10 +61,10 @@ export default function Hero() {
               people
             </Typography>
           </Typography>
-          <Typography variant="h4" align="center" fontWeight="normal">
-            And stop clots together
+          <Typography variant="h5" align="center" fontWeight="normal">
+            Stop clots together
           </Typography>
-          <Typography
+          {/* <Typography
             textAlign="center"
             color="text.secondary"
             sx={{ alignSelf: "center", width: { sm: "100%", md: "80%" } }}
@@ -73,8 +72,8 @@ export default function Hero() {
             Explore our cutting-edge dashboard, delivering high-quality
             solutions tailored to your needs. Elevate your experience with
             top-tier features and services.
-          </Typography>
-          <Stack
+          </Typography> */}
+          {/* <Stack
             direction={{ xs: "column", sm: "row" }}
             alignSelf="center"
             sx={{ pt: 2, width: { xs: "100%", sm: "auto" } }}
@@ -93,7 +92,7 @@ export default function Hero() {
               Terms & Conditions
             </Link>
             .
-          </Typography>
+          </Typography> */}
         </Stack>
       </Container>
     </Box>

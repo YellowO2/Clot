@@ -68,11 +68,19 @@ const Home = () => {
   const filteredAndSortedPosts = mockPostDataList
     .filter((post) => {
       const matchesSearchTerm =
-        post.title.toLowerCase().includes(searchParams.searchTerm.toLowerCase()) ||
-        post.description.toLowerCase().includes(searchParams.searchTerm.toLowerCase());
+        post.title
+          .toLowerCase()
+          .includes(searchParams.searchTerm.toLowerCase()) ||
+        post.description
+          .toLowerCase()
+          .includes(searchParams.searchTerm.toLowerCase());
 
-      const matchesFromDate = !searchParams.fromDate || new Date(post.createdOn) >= new Date(searchParams.fromDate);
-      const matchesToDate = !searchParams.toDate || new Date(post.createdOn) <= new Date(searchParams.toDate);
+      const matchesFromDate =
+        !searchParams.fromDate ||
+        new Date(post.createdOn) >= new Date(searchParams.fromDate);
+      const matchesToDate =
+        !searchParams.toDate ||
+        new Date(post.createdOn) <= new Date(searchParams.toDate);
 
       return matchesSearchTerm && matchesFromDate && matchesToDate;
     })
@@ -89,7 +97,6 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <Divider />
 
       <SearchBar
         onSearch={handleSearch}
