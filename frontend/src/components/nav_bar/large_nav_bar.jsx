@@ -48,7 +48,7 @@ function LargeNavBar({
         backgroundColor:
           theme.palette.mode === "light"
             ? "rgba(255, 255, 255, 1)"
-            : "rgba(0, 0, 0, 0.6)",
+            : "rgba(0, 0, 0, 1)",
 
         boxShadow:
           theme.palette.mode === "light"

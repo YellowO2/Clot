@@ -13,7 +13,7 @@ import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
 import SideBarLeft from "./components/sidebar";
 import LandingPage from "./pages/landing";
-import Communities from "./pages/communities";
+import Communities from "./pages/communities/communities";
 import { mockUsers, mockEvents } from "./mock_data";
 
 const customThemeLight = createTheme({
