@@ -107,7 +107,11 @@ function NavBar({ mode, toggleColorMode }) {
 
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               <MenuItem sx={{ py: "6px", px: "12px" }}>
-                <Typography variant="body2" color="text.primary">
+                <Typography 
+                variant="body2" 
+                color="text.primary" 
+                component={Link} to="/communities" 
+                style={{ textDecoration: 'none' }}>
                   Communities
                 </Typography>
               </MenuItem>

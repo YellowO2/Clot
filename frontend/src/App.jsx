@@ -13,10 +13,7 @@ import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
 import SideBarLeft from "./components/sidebar";
 import LandingPage from "./pages/landing";
-<<<<<<< HEAD
 import Communities from "./pages/communities/communities";
-=======
->>>>>>> 54ea1c2237facedf25338d128a0939bf1640436b
 
 const customThemeLight = createTheme({
   palette: {
@@ -89,7 +86,6 @@ function App() {
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <BrowserRouter>
-<<<<<<< HEAD
           <NavBar toggleColorMode={toggleColorMode} mode={mode} />
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -111,28 +107,6 @@ function App() {
               </p>
             </div>
           </footer>
-=======
-          <SideBarLeft>
-            <NavBar toggleColorMode={toggleColorMode} mode={mode} />
-            <Routes>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/post/:id" element={<Post />} />
-              <Route path="/create-post" element={<CreatePost />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/signin" element={<Signin />} />
-              <Route path="/communities" element={<FullWidthTabs />} />
-            </Routes>
-            <footer className="py-5 bg-dark">
-              <div className="container">
-                <p className="m-0 text-center text-white">
-                  Copyright &copy; Your Website 2023
-                </p>
-              </div>
-            </footer>
-          </SideBarLeft>
->>>>>>> 54ea1c2237facedf25338d128a0939bf1640436b
         </BrowserRouter>
       </LocalizationProvider>
     </ThemeProvider>
