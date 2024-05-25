@@ -73,7 +73,7 @@ const customThemeDark = createTheme({
 });
 
 function App() {
-  const [mode, setMode] = useState("dark"); // Theme mode: light or dark
+  const [mode, setMode] = useState("light"); // Theme mode: light or dark
 
   // Function to toggle between light and dark mode
   const toggleColorMode = () => {
