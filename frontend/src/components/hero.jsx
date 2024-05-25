@@ -6,7 +6,6 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
 
 export default function Hero() {
   return (
