@@ -13,6 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import ToggleColorMode from "./toggle_color_mode";
+import { linkClasses } from "@mui/material";
 
 const logoStyle = {
   width: "140px",
@@ -162,7 +163,7 @@ function NavBar({ mode, toggleColorMode }) {
                 color="primary"
                 variant="text"
                 size="small"
-                component="a"
+                component={Link} to="/signin"
                 href="/material-ui/getting-started/templates/sign-in/"
                 target="_blank"
               >
@@ -172,7 +173,7 @@ function NavBar({ mode, toggleColorMode }) {
                 color="primary"
                 variant="contained"
                 size="small"
-                component="a"
+                component={Link} to="/signup"
                 href="/material-ui/getting-started/templates/sign-up/"
                 target="_blank"
               >
