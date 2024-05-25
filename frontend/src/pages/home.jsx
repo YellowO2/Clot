@@ -12,7 +12,7 @@ const mockPostDataList = [
     description: "Join us for a cleanup event!",
     image: "https://via.placeholder.com/150",
     upvotes: 100,
-    createdOn: '2024-05-01',
+    createdOn: "2024-05-01",
   },
   {
     id: 2,
@@ -20,31 +20,31 @@ const mockPostDataList = [
     description: "Help!!!",
     image: "https://via.placeholder.com/150",
     upvotes: 10,
-    createdOn: '2024-05-02',
+    createdOn: "2024-05-02",
   },
   {
     id: 69,
-    title: "Clot Restoration",
+    title: "Red Clot Restoration",
     description: "Help us restoring the local clot!",
     image: "https://via.placeholder.com/150",
     upvotes: 69,
-    createdOn: '2024-05-03',
+    createdOn: "2024-05-03",
   },
   {
-    id: "gaygay",
-    title: " Restoration",
+    id: "White_Clot_id",
+    title: "White Clot Restoration",
     description: "Help us restoring the local !",
     image: "https://via.placeholder.com/150",
     upvotes: 11,
-    createdOn: '2024-05-04',
+    createdOn: "2024-05-04",
   },
   {
     id: "rithwik",
-    title: " Restoration",
+    title: "Haemoglobin Restoration",
     description: "Help us restoring !",
     image: "https://via.placeholder.com/150",
     upvotes: 0,
-    createdOn: '2024-05-05',
+    createdOn: "2024-05-05",
   },
 ];
 
@@ -65,23 +65,26 @@ const Home = () => {
     setSortBy(sortOption);
   };
 
-  const sortedPosts = mockPostDataList
-    .sort((a, b) => {
-      switch (sortBy) {
-        case "upvotes":
-          return b.upvotes - a.upvotes;
-        case "recent":
-        default:
-          return new Date(b.createdOn) - new Date(a.createdOn);
-      }
-    });
+  const sortedPosts = mockPostDataList.sort((a, b) => {
+    switch (sortBy) {
+      case "upvotes":
+        return b.upvotes - a.upvotes;
+      case "recent":
+      default:
+        return new Date(b.createdOn) - new Date(a.createdOn);
+    }
+  });
 
   return (
     <>
       <Hero />
       <Divider />
 
-      <SearchBar onSearch={handleSearch} onSortChange={handleSortChange} sortBy={sortBy} />
+      <SearchBar
+        onSearch={handleSearch}
+        onSortChange={handleSortChange}
+        sortBy={sortBy}
+      />
 
       <Container sx={{ py: 4 }}>
         <Grid container spacing={2}>

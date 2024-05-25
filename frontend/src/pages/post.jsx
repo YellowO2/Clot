@@ -11,19 +11,22 @@ import {
 } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import CustomButton from "../components/custom_button";
+import { v4 as uuid }from 'uuid';
 
 function formatDate(date) {
   const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+  const day = String(date.getDate()).padStart(2, "0");
 
   return `${year}-${month}-${day}`;
-};
+}
 
 const Post = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
+  const [editingId, setEditingId] = useState(null);
+  const [editedContent, setEditedContent] = useState("");
 
   useEffect(() => {
     // Mock fetch post and comments data
@@ -59,6 +62,28 @@ const Post = () => {
     fetchPost();
   }, [id]);
 
+  const handleEditClick = (comment) => {
+    setEditingId(comment.id);
+    setEditedContent(comment.content);
+  };
+
+  const handleSaveClick = (commentId) => {
+    setComments(comments.map(comment => 
+      comment.id === commentId ? { ...comment, content: editedContent } : comment
+    ));
+    setEditingId(null);
+  };
+
+  const handleCancelClick = () => {
+    setEditingId(null);
+  };
+
+  const handleDelete = (event) => {
+    const commentIndex = Number(event.target.value);
+    const remainingComments = comments.filter(object => object.id !== commentIndex);
+    setComments(remainingComments);
+  };
+
   if (!post) {
     return <div>Loading...</div>;
   }
@@ -74,7 +99,7 @@ const Post = () => {
         content: inputComment,
         createdAt: formatDate(new Date()),
       };
-      setComments([...comments, newComment]); // TODO: Add into DB, not just update state.
+      setComments(prevComments => ([...prevComments, newComment])); // TODO: Add into DB, not just update state.
     };
 
     return (
@@ -108,12 +133,11 @@ const Post = () => {
               displayType="post"
               buttonType="upvote"
               upvoteCount={post.upvotes}
-              handleClick={() => setPost({ ...post, upvotes: post.upvotes + 1 })}
+              handleClick={() =>
+                setPost({ ...post, upvotes: post.upvotes + 1 })
+              }
             />
-            <CustomButton
-              displayType="post"
-              buttonType="share"
-            />
+            <CustomButton displayType="post" buttonType="share" />
           </Box>
         </CardContent>
       </Card>
@@ -123,7 +147,7 @@ const Post = () => {
         </Typography>
         <CommentBox />
         {comments.map((comment) => (
-          <Card key={comment.id} sx={{ mb: 3 }}>
+          <Card key={uuid()} sx={{ mb: 3 }}>
             <CardContent>
               <Typography variant="h6" component="div">
                 {comment.author}
@@ -135,7 +159,28 @@ const Post = () => {
               >
                 {comment.createdAt}
               </Typography>
-              <Typography variant="body2">{comment.content}</Typography>
+              {editingId === comment.id ? (
+                <>
+                  <TextField
+                    fullWidth
+                    value={editedContent}
+                    onChange={(e) => setEditedContent(e.target.value)}
+                  />
+                  <Button onClick={() => handleSaveClick(comment.id)}>Save</Button>
+                  <Button onClick={handleCancelClick}>Cancel</Button>
+                </>
+              ) : (
+                <>
+                  <Typography variant="body2">{comment.content}</Typography>
+                  <Button onClick={() => handleEditClick(comment)}>Edit</Button>
+                </>
+              )}
+              <Button
+                value={comment.id}
+                onClick={handleDelete}
+              >
+                Delete
+              </Button>
             </CardContent>
           </Card>
         ))}
