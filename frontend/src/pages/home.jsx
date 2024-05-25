@@ -65,15 +65,26 @@ const Home = () => {
     setSortBy(sortOption);
   };
 
-  const sortedPosts = mockPostDataList.sort((a, b) => {
-    switch (sortBy) {
-      case "upvotes":
-        return b.upvotes - a.upvotes;
-      case "recent":
-      default:
-        return new Date(b.createdOn) - new Date(a.createdOn);
-    }
-  });
+  const filteredAndSortedPosts = mockPostDataList
+    .filter((post) => {
+      const matchesSearchTerm =
+        post.title.toLowerCase().includes(searchParams.searchTerm.toLowerCase()) ||
+        post.description.toLowerCase().includes(searchParams.searchTerm.toLowerCase());
+
+      const matchesFromDate = !searchParams.fromDate || new Date(post.createdOn) >= new Date(searchParams.fromDate);
+      const matchesToDate = !searchParams.toDate || new Date(post.createdOn) <= new Date(searchParams.toDate);
+
+      return matchesSearchTerm && matchesFromDate && matchesToDate;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case "upvotes":
+          return b.upvotes - a.upvotes;
+        case "recent":
+        default:
+          return new Date(b.createdOn) - new Date(a.createdOn);
+      }
+    });
 
   return (
     <>
@@ -88,7 +99,7 @@ const Home = () => {
 
       <Container sx={{ py: 4 }}>
         <Grid container spacing={2}>
-          {sortedPosts.map((postData) => (
+          {filteredAndSortedPosts.map((postData) => (
             <Grid key={postData.id} item xs={6} md={4}>
               <DisplayCard postData={postData} />
             </Grid>
