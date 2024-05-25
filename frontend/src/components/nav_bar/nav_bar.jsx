@@ -14,6 +14,7 @@ import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import ToggleColorMode from "./toggle_color_mode";
 import { linkClasses } from "@mui/material";
+import ProfileMenu from "./profilemenu";
 
 const logoStyle = {
   width: "140px",
@@ -155,7 +156,7 @@ function NavBar({ mode, toggleColorMode }) {
                 alignItems: "center",
               }}
             >
-              <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
+              <ProfileMenu/>
               <Button color="inherit" component={Link} to="/create-post">
                 + Create Post
               </Button>
@@ -179,6 +180,7 @@ function NavBar({ mode, toggleColorMode }) {
               >
                 Sign up
               </Button>
+              <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
             </Box>
             <Box sx={{ display: { sm: "", md: "none" } }}>
               <Button
