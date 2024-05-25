@@ -12,7 +12,7 @@ import Profile from "./pages/profile";
 import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
 import LandingPage from "./pages/landing";
-import FullWidthTabs from "./pages/about";
+import Communities from "./pages/communities/communities";
 
 const customThemeLight = createTheme({
   palette: {
@@ -72,7 +72,7 @@ const customThemeDark = createTheme({
 
 
 function App() {
-  const [mode, setMode] = useState("dark"); // Theme mode: light or dark
+  const [mode, setMode] = useState("light"); // Theme mode: light or dark
 
   // Function to toggle between light and dark mode
   const toggleColorMode = () => {
@@ -93,7 +93,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<Signin />} />
-            <Route path="/communities" element={<FullWidthTabs />} />
+            <Route path="/communities" element={<Communities />} />
             
 
 

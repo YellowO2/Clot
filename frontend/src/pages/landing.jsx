@@ -74,6 +74,7 @@ export default function LandingPage() {
               variant="contained"
               color="primary"
               sx={{ width: "200px", height: "60px", fontSize: "1.25rem" }} // Bigger size\
+              href="/home"
 
               
             >
