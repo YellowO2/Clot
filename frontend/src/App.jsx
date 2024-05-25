@@ -11,6 +11,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Profile from "./pages/profile";
 import SignUp from "./pages/signup";
 import Signin from "./pages/signin";
+import LandingPage from "./pages/landing";
 
 const customThemeLight = createTheme({
   palette: {
@@ -84,12 +85,15 @@ function App() {
         <BrowserRouter>
           <NavBar toggleColorMode={toggleColorMode} mode={mode} />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/post/:id" element={<Post />} />
             <Route path="/create-post" element={<CreatePost />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<Signin />} />
+            
+
 
           </Routes>
           <footer className="py-5 bg-dark">
