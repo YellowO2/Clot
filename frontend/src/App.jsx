@@ -81,7 +81,7 @@ function App() {
 
   return (
     <ThemeProvider
-      theme={mode === "dark" ? customThemeLight : customThemeDark}
+      theme={mode === "light" ? customThemeLight : customThemeDark}
     >
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
