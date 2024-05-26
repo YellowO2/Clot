@@ -93,11 +93,9 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
               }}
             >
               Clot
-            {/* </Typography> */}
-
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              
-              {/* <MenuItem sx={{ py: "6px", px: "12px" }}>
+              {/* </Typography> */}
+              <Box sx={{ display: { xs: "none", md: "flex" } }}>
+                {/* <MenuItem sx={{ py: "6px", px: "12px" }}>
                 <Typography 
                 variant="body2" 
                 color="text.primary" 
@@ -106,48 +104,46 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                   Communities
                 </Typography>
               </MenuItem> */}
-              <MenuItem
-                // onClick={() => scrollToSection("faq")}
-                sx={{ py: "6px", px: "12px" }}
-              >
-
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "flex-end",
-                  marginLeft: "25px",
-                }}
-              >
-                <SearchForm />
-                </Box>
-              </MenuItem>
-              <MenuItem >
-                <ProfileMenu />
-                <Button
-                  color="primary"
-                  variant="text"
-                  size="large"
-                  component={Link}
-                  to="/signin"
-                  
+                <MenuItem
+                  // onClick={() => scrollToSection("faq")}
+                  sx={{ py: "6px", px: "12px" }}
                 >
-                  Login in
-                </Button>
-                <Button
-                  color="primary"
-                  variant="contained"
-                  size="large"
-                  component={Link}
-                  to="/signup"
-                >
-                  Sign up
-                </Button>
-                <ToggleColorMode
-                  mode={mode}
-                  toggleColorMode={toggleColorMode}
-                />
-              </MenuItem>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "flex-end",
+                      marginLeft: "25px",
+                    }}
+                  >
+                    <SearchForm />
+                  </Box>
+                </MenuItem>
+                <MenuItem>
+                  <ProfileMenu />
+                  <Button
+                    color="primary"
+                    variant="text"
+                    size="large"
+                    component={Link}
+                    to="/signin"
+                  >
+                    Login in
+                  </Button>
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    size="large"
+                    component={Link}
+                    to="/signup"
+                  >
+                    Sign up
+                  </Button>
+                  <ToggleColorMode
+                    mode={mode}
+                    toggleColorMode={toggleColorMode}
+                  />
+                </MenuItem>
                 {/* Drawer button for small screens */}
                 <Box
                   sx={{
@@ -214,7 +210,7 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
   ) : (
     <Box>
       <AppBar
-        position={isHomePage ? "fixed" : "static"}
+        position={shouldDisplay ? "fixed" : "static"}
         sx={{
           boxShadow: 0,
           bgcolor: "transparent",
@@ -300,7 +296,6 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                 size="small"
                 component={Link}
                 to="/signin"
-                href="/material-ui/getting-started/templates/sign-in/"
                 target=" "
               >
                 Sign in
@@ -311,7 +306,6 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                 size="small"
                 component={Link}
                 to="/signup"
-                href="/material-ui/getting-started/templates/sign-up/"
                 target=" "
               >
                 Sign up

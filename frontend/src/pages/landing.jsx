@@ -3,9 +3,9 @@ import { alpha } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import { useLocation, Link } from "react-router-dom";
 
 export default function LandingPage() {
   return (
@@ -73,7 +73,9 @@ export default function LandingPage() {
               variant="contained"
               color="primary"
               sx={{ width: "200px", height: "60px", fontSize: "1.25rem" }} // Bigger size\
-              href="/home"
+              to="/home"
+              component={Link}
+              target=""
             >
               Find
             </Button>
@@ -81,7 +83,9 @@ export default function LandingPage() {
               variant="contained"
               color="secondary"
               sx={{ width: "200px", height: "60px", fontSize: "1.25rem" }} // Bigger size
-              href="/hostform"
+              to="/hostform"
+              component={Link}
+              target=""
             >
               Host
             </Button>
