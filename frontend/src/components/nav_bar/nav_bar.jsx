@@ -214,7 +214,6 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
   ) : (
     <Box>
       <AppBar
-        position={isHomePage ? "fixed" : "static"}
         sx={{
           boxShadow: 0,
           bgcolor: "transparent",
