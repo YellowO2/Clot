@@ -132,9 +132,9 @@ function LargeNavBar({
               </MenuItem>
               <MenuItem>
                 <ProfileMenu />
-                <Button color="inherit" component={Link} to="/create-post">
+                {/* <Button color="inherit" component={Link} to="/create-post">
                   + Create Post
-                </Button>
+                </Button> */}
                 <Button
                   color="primary"
                   variant="text"

@@ -125,7 +125,7 @@ function App() {
     });
 
   return (
-    <ThemeProvider theme={mode === "dark" ? customThemeLight : customThemeDark}>
+    <ThemeProvider theme={mode === "light" ? customThemeLight : customThemeDark}>
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <BrowserRouter>
