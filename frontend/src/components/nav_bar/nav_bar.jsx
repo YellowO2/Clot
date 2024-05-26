@@ -92,11 +92,11 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
               }}
             >
               Clot
-            </Typography>
+            {/* </Typography> */}
 
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               
-              <MenuItem sx={{ py: "6px", px: "12px" }}>
+              {/* <MenuItem sx={{ py: "6px", px: "12px" }}>
                 <Typography 
                 variant="body2" 
                 color="text.primary" 
@@ -104,13 +104,11 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                 style={{ textDecoration: 'none' }}>
                   Communities
                 </Typography>
-              </MenuItem>
+              </MenuItem> */}
               <MenuItem
                 // onClick={() => scrollToSection("faq")}
                 sx={{ py: "6px", px: "12px" }}
               >
-                Clot
-              </Typography>
 
               <Box
                 sx={{
@@ -121,6 +119,7 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                 }}
               >
                 <SearchForm />
+                </Box>
               </MenuItem>
               <MenuItem >
                 <ProfileMenu />
@@ -147,7 +146,7 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                   mode={mode}
                   toggleColorMode={toggleColorMode}
                 />
-
+              </MenuItem>
                 {/* Drawer button for small screens */}
                 <Box
                   sx={{
@@ -174,14 +173,14 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                       <MenuItem>
                         <ProfileMenu />
                       </MenuItem>
-                      <Button
+                      {/* <Button
                         color="inherit"
                         component={Link}
                         to="/create-post"
                         fullWidth
                       >
                         + Create Post
-                      </Button>
+                      </Button> */}
                       <Button
                         color="primary"
                         variant="text"
@@ -271,7 +270,7 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
               >
                 Clot
               </Typography>
-              <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              {/* <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <MenuItem
                   // onClick={() => runTo("communities")}
                   sx={{ py: "6px", px: "12px" }}
@@ -280,7 +279,7 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                     Communities
                   </Typography>
                 </MenuItem>
-              </Box>
+              </Box> */}
             </Box>
             <Box
               sx={{
@@ -291,9 +290,9 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
             >
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
               <ProfileMenu />
-              <Button color="inherit" component={Link} to="/create-post">
+              {/* <Button color="inherit" component={Link} to="/create-post">
                 + Create Post
-              </Button>
+              </Button> */}
               <Button
                 color="primary"
                 variant="text"
