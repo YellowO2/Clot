@@ -92,23 +92,24 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                 ml: "5px",
               }}
             >
-              <Typography
-                variant="h4"
-                noWrap
-                component="a"
-                href="/"
-                sx={{
-                  mr: 2,
-                  display: { xs: "none", md: "flex" },
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  letterSpacing: ".3rem",
-                  color: "inherit",
-                  textDecoration: "none",
-                }}
+              Clot
+            {/* </Typography> */}
+
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              
+              {/* <MenuItem sx={{ py: "6px", px: "12px" }}>
+                <Typography 
+                variant="body2" 
+                color="text.primary" 
+                component={Link} to="/communities" 
+                style={{ textDecoration: 'none' }}>
+                  Communities
+                </Typography>
+              </MenuItem> */}
+              <MenuItem
+                // onClick={() => scrollToSection("faq")}
+                sx={{ py: "6px", px: "12px" }}
               >
-                Clot
-              </Typography>
 
               <Box
                 sx={{
@@ -118,24 +119,35 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                   marginLeft: "25px",
                 }}
               >
-                {isHomePage && (
-                  <SearchForm
-                    onSearch={onSearch}
-                    onSortChange={onSortChange}
-                    sortBy={sortBy}
-                  />
-                )}
-                {/* Group all buttons and menu items */}
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <MenuItem>
-                    <ProfileMenu />
-                  </MenuItem>
-                  <ToggleColorMode
-                    mode={mode}
-                    toggleColorMode={toggleColorMode}
-                  />
+                <SearchForm />
                 </Box>
-
+              </MenuItem>
+              <MenuItem >
+                <ProfileMenu />
+                <Button
+                  color="primary"
+                  variant="text"
+                  size="large"
+                  component={Link}
+                  to="/signin"
+                  
+                >
+                  Login in
+                </Button>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  size="large"
+                  component={Link}
+                  to="/signup"
+                >
+                  Sign up
+                </Button>
+                <ToggleColorMode
+                  mode={mode}
+                  toggleColorMode={toggleColorMode}
+                />
+              </MenuItem>
                 {/* Drawer button for small screens */}
                 <Box
                   sx={{
@@ -162,14 +174,14 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                       <MenuItem>
                         <ProfileMenu />
                       </MenuItem>
-                      <Button
+                      {/* <Button
                         color="inherit"
                         component={Link}
                         to="/create-post"
                         fullWidth
                       >
                         + Create Post
-                      </Button>
+                      </Button> */}
                       <Button
                         color="primary"
                         variant="text"
@@ -259,7 +271,7 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
               >
                 Clot
               </Typography>
-              <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              {/* <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <MenuItem
                   // onClick={() => runTo("communities")}
                   sx={{ py: "6px", px: "12px" }}
@@ -268,7 +280,7 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
                     Communities
                   </Typography>
                 </MenuItem>
-              </Box>
+              </Box> */}
             </Box>
             <Box
               sx={{
@@ -279,9 +291,9 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
             >
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
               <ProfileMenu />
-              <Button color="inherit" component={Link} to="/create-post">
+              {/* <Button color="inherit" component={Link} to="/create-post">
                 + Create Post
-              </Button>
+              </Button> */}
               <Button
                 color="primary"
                 variant="text"

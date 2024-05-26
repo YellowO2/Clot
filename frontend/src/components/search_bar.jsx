@@ -22,13 +22,11 @@ const SearchForm = ({ onSearch, onSortChange, sortBy, isLargeScreen }) => {
       onSubmit={handleSubmit}
       sx={{
         display: "flex",
-        // width: "100%",
-        maxWidth: "800px",
-        // justifyContent: "center",
-        // alignItems: "center",
-        // flexWrap: "wrap",
-        // gap: 2,
-        // p: 4,
+        justifyContent: "center",
+        alignItems: "center",
+        flexWrap: "wrap",
+        gap: 3,
+        p: 5,
         // borderBottom: "1px solid #ccc",
       }}
     >
