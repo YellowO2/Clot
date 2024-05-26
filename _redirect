@@ -1,0 +1,7 @@
+/home /
+/communities /create-post
+/profile /signup
+/signin /hostform
+/post/:id
+
+/* /index.html 200
