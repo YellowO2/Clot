@@ -27,10 +27,11 @@ function NavBar({ mode, toggleColorMode, onSearch, onSortChange, sortBy }) {
     setOpen(newOpen);
   };
 
-  const isHomePage = location.pathname === "/home";
+  const shouldDisplay =
+    location.pathname === "/home" || location.pathname === "/communities";
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
 
-  return isHomePage ? (
+  return shouldDisplay ? (
     isLargeScreen ? (
       <LargeNavBar
         onSearch={onSearch}
