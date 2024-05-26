@@ -37,8 +37,6 @@ function LargeNavBar({
     setOpen(newOpen);
   };
 
-  const isHomePage = location.pathname === "/home";
-
   return (
     <AppBar
       position="fixed"
