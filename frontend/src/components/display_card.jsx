@@ -13,6 +13,7 @@ import {
   Button,
 } from "@mui/material";
 import CustomButton from "./custom_button";
+import { red } from "@mui/material/colors";
 
 
 const DisplayCard = ({ postData }) => {
@@ -43,8 +44,7 @@ const DisplayCard = ({ postData }) => {
       <CardMedia
         component="img"
         height="194"
-        image="/volunteer.png"
-        // image={postData.image}
+        image={postData.image}
         alt="Paella dish"
       />
       <CardContent>
@@ -52,11 +52,10 @@ const DisplayCard = ({ postData }) => {
         loading={false}
         // onClick={function(){}}
         size="sm"
-        variant="soft"
+        variant="contained"
+        color="success"
       >
-           <Typography variant="caption text" component="div" fontWeight="bold">
-            Tag {postData.tag}
-          </Typography>
+             {postData.tag}
       </Button>
       {/* <Fab variant="extended">
         <Typography variant="caption text" component="div" fontWeight="bold">
