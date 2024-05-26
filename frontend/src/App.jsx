@@ -19,10 +19,10 @@ const customThemeLight = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#FFEC9E", // Warm primary color
+      main: "#ED9455", // Warm primary color
     },
     secondary: {
-      main: "#ED9455", // Light secondary color
+      main: "#FFEC9E", // Light secondary color
     },
     background: {
       paper: "#FFFFFF", // White background for paper elements

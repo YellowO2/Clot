@@ -106,6 +106,7 @@ function NavBar({ mode, toggleColorMode }) {
             </Typography>
 
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              
               <MenuItem sx={{ py: "6px", px: "12px" }}>
                 <Typography 
                 variant="body2" 
@@ -130,24 +131,22 @@ function NavBar({ mode, toggleColorMode }) {
               >
                 <SearchForm />
               </MenuItem>
-              <MenuItem>
+              <MenuItem >
                 <ProfileMenu />
-                <Button color="inherit" component={Link} to="/create-post">
-                  + Create Post
-                </Button>
                 <Button
                   color="primary"
                   variant="text"
-                  size="small"
+                  size="large"
                   component={Link}
                   to="/signin"
+                  
                 >
-                  Sign in
+                  Login in
                 </Button>
                 <Button
                   color="primary"
                   variant="contained"
-                  size="small"
+                  size="large"
                   component={Link}
                   to="/signup"
                 >
