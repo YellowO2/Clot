@@ -14,6 +14,7 @@ import Signin from "./pages/signin";
 import SideBarLeft from "./components/sidebar";
 import LandingPage from "./pages/landing";
 import Communities from "./pages/communities/communities";
+import { mockEvents } from "./mock_data";
 
 const customThemeLight = createTheme({
   palette: {
@@ -78,35 +79,88 @@ function App() {
   const toggleColorMode = () => {
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
   };
+  const [searchParams, setSearchParams] = useState({
+    searchTerm: "",
+    fromDate: "",
+    toDate: "",
+  });
+
+  const [sortBy, setSortBy] = useState("recent");
+
+  const handleSearch = (params) => {
+    setSearchParams(params);
+  };
+
+  const handleSortChange = (sortOption) => {
+    setSortBy(sortOption);
+  };
+
+  const filteredAndSortedPosts = mockEvents
+    .filter((post) => {
+      const matchesSearchTerm =
+        post.title
+          .toLowerCase()
+          .includes(searchParams.searchTerm.toLowerCase()) ||
+        post.description
+          .toLowerCase()
+          .includes(searchParams.searchTerm.toLowerCase());
+
+      const matchesFromDate =
+        !searchParams.fromDate ||
+        new Date(post.createdOn) >= new Date(searchParams.fromDate);
+      const matchesToDate =
+        !searchParams.toDate ||
+        new Date(post.createdOn) <= new Date(searchParams.toDate);
+
+      return matchesSearchTerm && matchesFromDate && matchesToDate;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case "upvotes":
+          return b.upvotes - a.upvotes;
+        case "recent":
+        default:
+          return new Date(b.createdOn) - new Date(a.createdOn);
+      }
+    });
 
   return (
-    <ThemeProvider
-      theme={mode === "light" ? customThemeLight : customThemeDark}
-    >
+    <ThemeProvider theme={mode === "dark" ? customThemeLight : customThemeDark}>
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <BrowserRouter>
-          <NavBar toggleColorMode={toggleColorMode} mode={mode} />
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/post/:id" element={<Post />} />
-            <Route path="/create-post" element={<CreatePost />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/signin" element={<Signin />} />
-            <Route path="/communities" element={<Communities />} />
-            
-
-
-          </Routes>
-          <footer className="py-5 bg-dark">
-            <div className="container">
-              <p className="m-0 text-center text-white">
-                Copyright &copy; Your Website 2023
-              </p>
-            </div>
-          </footer>
+          <SideBarLeft>
+            <NavBar
+              toggleColorMode={toggleColorMode}
+              mode={mode}
+              onSearch={handleSearch}
+              onSortChange={handleSortChange}
+              sortBy={sortBy}
+            />
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route
+                path="/home"
+                element={
+                  <Home filteredAndSortedPosts={filteredAndSortedPosts} />
+                }
+              />
+              <Route path="/post/:id" element={<Post />} />
+              <Route path="/create-post" element={<CreatePost />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/signin" element={<Signin />} />
+              <Route path="/communities" element={<Communities />} />
+              <Route path="/hostform" element={<CreatePost />} />
+            </Routes>
+            <footer className="py-5 bg-dark">
+              <div className="container">
+                <p className="m-0 text-center text-white">
+                  Copyright &copy; Your Website 2023
+                </p>
+              </div>
+            </footer>
+          </SideBarLeft>
         </BrowserRouter>
       </LocalizationProvider>
     </ThemeProvider>

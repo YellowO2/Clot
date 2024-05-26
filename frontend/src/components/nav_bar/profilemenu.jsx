@@ -1,7 +1,7 @@
 // ProfileMenu.js
-import React, { useState } from 'react';
-import { Menu, MenuItem, IconButton, Avatar } from '@mui/material';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Menu, MenuItem, IconButton, Avatar } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const ProfileMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -16,14 +16,10 @@ const ProfileMenu = () => {
 
   return (
     <div>
-      <IconButton onClick={handleClick} size="small">
+      <IconButton onClick={handleClick} size="large">
         <Avatar alt="Profile Picture" src="/path-to-your-profile-picture.jpg" />
       </IconButton>
-      <Menu
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
+      <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem onClick={handleClose} component={Link} to="/profile">
           Profile
         </MenuItem>

@@ -9,11 +9,10 @@ import {
   Button,
   Box,
 } from "@mui/material";
-import ShareIcon from "@mui/icons-material/Share";
 import CustomButton from "../components/custom_button";
-import { v4 as uuid }from 'uuid';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
-import DoneIcon from '@mui/icons-material/Done';
+import { v4 as uuid } from "uuid";
+import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
+import DoneIcon from "@mui/icons-material/Done";
 
 function formatDate(date) {
   const year = date.getFullYear();
@@ -72,9 +71,13 @@ const Post = () => {
   };
 
   const handleSaveClick = (commentId) => {
-    setComments(comments.map(comment => 
-      comment.id === commentId ? { ...comment, content: editedContent } : comment
-    ));
+    setComments(
+      comments.map((comment) =>
+        comment.id === commentId
+          ? { ...comment, content: editedContent }
+          : comment
+      )
+    );
     setEditingId(null);
   };
 
@@ -84,7 +87,9 @@ const Post = () => {
 
   const handleDelete = (event) => {
     const commentIndex = Number(event.target.value);
-    const remainingComments = comments.filter(object => object.id !== commentIndex);
+    const remainingComments = comments.filter(
+      (object) => object.id !== commentIndex
+    );
     setComments(remainingComments);
   };
 
@@ -93,8 +98,16 @@ const Post = () => {
   }
 
   const RegisterButton = () => {
-    let icon = registered ? <DoneIcon></DoneIcon> : <AppRegistrationIcon></AppRegistrationIcon> ;
-    let text = registered ? <span>Registered!</span> : <span>Register for this Event</span>;
+    let icon = registered ? (
+      <DoneIcon></DoneIcon>
+    ) : (
+      <AppRegistrationIcon></AppRegistrationIcon>
+    );
+    let text = registered ? (
+      <span>Registered!</span>
+    ) : (
+      <span>Register for this Event</span>
+    );
     let buttonColour = registered ? "success" : "primary";
     return (
       <Button
@@ -104,7 +117,7 @@ const Post = () => {
       >
         {icon} {text}
       </Button>
-    )
+    );
   };
 
   const CommentBox = () => {
@@ -118,7 +131,7 @@ const Post = () => {
         content: inputComment,
         createdAt: formatDate(new Date()),
       };
-      setComments(prevComments => ([...prevComments, newComment])); // TODO: Add into DB, not just update state.
+      setComments((prevComments) => [...prevComments, newComment]); // TODO: Add into DB, not just update state.
     };
 
     return (
@@ -186,7 +199,9 @@ const Post = () => {
                     value={editedContent}
                     onChange={(e) => setEditedContent(e.target.value)}
                   />
-                  <Button onClick={() => handleSaveClick(comment.id)}>Save</Button>
+                  <Button onClick={() => handleSaveClick(comment.id)}>
+                    Save
+                  </Button>
                   <Button onClick={handleCancelClick}>Cancel</Button>
                 </>
               ) : (
@@ -195,10 +210,7 @@ const Post = () => {
                   <Button onClick={() => handleEditClick(comment)}>Edit</Button>
                 </>
               )}
-              <Button
-                value={comment.id}
-                onClick={handleDelete}
-              >
+              <Button value={comment.id} onClick={handleDelete}>
                 Delete
               </Button>
             </CardContent>

@@ -1,51 +1,73 @@
 // Mock user data
-const mockUsers = [
-  {
-    id: 1,
-    name: "Alice Johnson",
-    email: "alice.johnson@example.com",
-    avatar: "https://randomuser.me/api/portraits/women/1.jpg",
-    bio: "Passionate about community service and volunteering.",
-    location: "New York, NY",
-    friends: [2],
-    communities: [
-      {
-        id: 1,
-        name: "Animal Shelter Volunteers",
-        description:
-          "Volunteers dedicated to helping out at local animal shelters.",
-      },
-      {
-        id: 2,
-        name: "Beach Cleanup Crew",
-        description: "A community of people who organize beach cleanups.",
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "Bob Smith",
-    email: "bob.smith@example.com",
-    avatar: "https://randomuser.me/api/portraits/men/2.jpg",
-    bio: "Love making a difference through small acts of kindness.",
-    location: "Los Angeles, CA",
-    friends: [1],
-    communities: [
-      {
-        id: 1,
-        name: "Animal Shelter Volunteers",
-        description:
-          "Volunteers dedicated to helping out at local animal shelters.",
-      },
-      {
-        id: 3,
-        name: "Community Gardeners",
-        description:
-          "People who love gardening and helping maintain community gardens.",
-      },
-    ],
-  },
-];
+const mockUser = {
+  id: 1,
+  name: "Bob Smith",
+  email: "bob.smith@example.com",
+  avatar: "https://randomuser.me/api/portraits/men/2.jpg",
+  bio: "Love making a difference through small acts of kindness.",
+  location: "Los Angeles, CA",
+  friends: [
+    {
+      id: 1,
+      name: "Alice Johnson",
+      recentActivity: "Volunteering at the animal shelter",
+    },
+    {
+      id: 3,
+      name: "Charlie Brown",
+      recentActivity: "Planting new flowers in the community garden",
+    },
+    {
+      id: 4,
+      name: "David Williams",
+      recentActivity: "Attending a community clean-up event",
+    },
+    {
+      id: 5,
+      name: "Eve Davis",
+      recentActivity: "Hosting a local book club meeting",
+    },
+    {
+      id: 6,
+      name: "Frank Miller",
+      recentActivity: "Organizing a charity run",
+    },
+    {
+      id: 7,
+      name: "Grace Lee",
+      recentActivity: "Participating in a neighborhood watch program",
+    },
+    {
+      id: 8,
+      name: "Hannah Wilson",
+      recentActivity: "Teaching a community cooking class",
+    },
+    {
+      id: 9,
+      name: "Ian Taylor",
+      recentActivity: "Building a new playground in the local park",
+    },
+    {
+      id: 10,
+      name: "Jane Martinez",
+      recentActivity: "Joining a local art club",
+    },
+  ],
+
+  communities: [
+    {
+      id: 1,
+      name: "Animal Shelter Volunteers",
+      description:
+        "Volunteers dedicated to helping out at local animal shelters.",
+    },
+    {
+      id: 3,
+      name: "Brawl stars",
+      description: "People who like playing brawl stars.",
+    },
+  ],
+};
 
 // Mock event data
 const mockEvents = [
@@ -96,4 +118,4 @@ const mockEvents = [
   },
 ];
 
-export { mockUsers, mockEvents };
+export { mockUser, mockEvents };

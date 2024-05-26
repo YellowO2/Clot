@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
+const SearchForm = ({ onSearch, onSortChange, sortBy, isLargeScreen }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
@@ -53,39 +53,48 @@ const SearchForm = ({ onSearch, onSortChange, sortBy }) => {
             startAdornment: <SearchIcon />,
           }}
           sx={{
-            width: "300px",
+            width: "100%", // Make the TextField fill the available space
+            maxWidth: "800px", // Set a maximum width
           }}
         />
-        <TextField
-          type="date"
-          label="From"
-          variant="outlined"
-          InputLabelProps={{ shrink: true }}
-          value={fromDate}
-          onChange={(e) => setFromDate(e.target.value)}
-          sx={{ height: "100%" }}
-        />
-        <TextField
-          type="date"
-          label="To"
-          variant="outlined"
-          InputLabelProps={{ shrink: true }}
-          value={toDate}
-          onChange={(e) => setToDate(e.target.value)}
-          sx={{ height: "100%" }}
-        />
+        {isLargeScreen ? (
+          <>
+            <TextField
+              type="date"
+              label="From"
+              variant="outlined"
+              InputLabelProps={{ shrink: true }}
+              value={fromDate}
+              onChange={(e) => setFromDate(e.target.value)}
+              sx={{ height: "100%" }}
+            />
+            <TextField
+              type="date"
+              label="To"
+              variant="outlined"
+              InputLabelProps={{ shrink: true }}
+              value={toDate}
+              onChange={(e) => setToDate(e.target.value)}
+              sx={{ height: "100%" }}
+            />{" "}
+          </>
+        ) : (
+          <></>
+        )}
+
         <Button
           type="submit"
           variant="contained"
           color="primary"
           sx={{
             height: "56px", // Match the height of TextField input
-            padding: "0 16px", // Adjust padding if necessary
+            // padding: "0 16px", // Adjust padding if necessary
+            padding: "10px",
             display: "flex",
             alignItems: "center",
           }}
         >
-          Search
+          <Box> Search</Box>
         </Button>
       </Box>
     </Box>
