@@ -25,10 +25,10 @@ import { mockUser } from "../mock_data";
 import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 300;
-const shouldDisplay =
-  location.pathname === "/home" || location.pathname === "/communities";
 
 export default function SideBarLeft({ children }) {
+  const shouldDisplay =
+    location.pathname === "/home" || location.pathname === "/communities";
   const [showFriends, setShowFriends] = useState(true);
   const navigate = useNavigate();
 
