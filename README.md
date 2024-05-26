@@ -24,8 +24,7 @@ Selected Hackathon Track: **Social Responsibility**
 
 ## Pitch Deck (pdf)
 <!-- Good to (i) pre-record the demo, (ii) upload to Youtube, and (iii) put the link into the Pitch Deck -->
-[Link to Pitch Deck]()
 
 ## Project Demo Link
 
-[Link to the live working demo]()
+[Link to the live working demo](https://clot-sg-1.netlify.app/)
